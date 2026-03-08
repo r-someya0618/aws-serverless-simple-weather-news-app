@@ -64,6 +64,5 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
       methods: [apigatewayv2.HttpMethod.GET],
       integration: getCityIntegration, //TODO(Day10-02)
     });
-    */
   }
 }
