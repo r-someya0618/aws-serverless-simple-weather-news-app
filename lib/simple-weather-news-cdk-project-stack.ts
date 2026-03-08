@@ -40,7 +40,6 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
     getAllWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy); //Day08-03
     getCityWeatherPublicFunction.addToRolePolicy(dynamoDbPolicy);
     // HTTP API の追加
-    /* Day10-01
     const httpApi = new apigatewayv2.HttpApi(this, 'WeatherPublicHttpApi', {
       apiName: 'simple-weather-news-api-public',
       corsPreflight: {
@@ -49,17 +48,14 @@ export class SimpleWeatherNewsCdkProjectStack extends cdk.Stack {
         allowHeaders: ['*'],
       },
     });
-    */
 
     // GET /all エンドポイント
-    /* Day10-01
     const getAllIntegration = new integrations.HttpLambdaIntegration('GetAllWeatherIntegration', getAllWeatherPublicFunction);
     httpApi.addRoutes({
       path: '/all',
       methods: [apigatewayv2.HttpMethod.GET],
       integration: getAllIntegration,
     });
-    */
 
     // GET /{cityId} エンドポイント
     /* Day10-02
